@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  sensors:
+    build: .
+    restart: always
+    privileged: true
+    volumes:
+      - type: bind
+        source: /dev
+        target: /dev
+    env_file:
+      - env
