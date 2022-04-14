@@ -74,7 +74,7 @@ func main() {
 Write the stats to InfluxDB
 */
 func writeDb(data Response) {
-	client := influxdb2.NewClient("https://influxdb.home.zxcv32.com", os.Getenv("INFLUXDB_TOKEN"))
+	client := influxdb2.NewClient(os.Getenv("INFLUXDB_HOST"), os.Getenv("INFLUXDB_TOKEN"))
 	writeAPI := client.WriteAPI("zxcv32", "lab")
 	writeAPI.WriteRecord(fmt.Sprintf("lab,unit=celsius temperature=%f", data.HtSensor.TemperatureCelsius))
 	writeAPI.WriteRecord(fmt.Sprintf("lab,unit=percentage humidity=%d", data.HtSensor.HumidityPercent))
