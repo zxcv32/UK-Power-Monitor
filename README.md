@@ -9,4 +9,4 @@ Functions:
 
 # Grafana
 ![img.png](img.png)
-[Grafana Dashboard](https://snapshots.raintank.io/dashboard/snapshot/DTHEn2JnFpgA1tUgdS2apSegY1fnvdri)
+[Grafana Dashboard Snapshot](https://snapshots.raintank.io/dashboard/snapshot/EjkITqt85gGjJwfb2tf07lsEDsm3M5hs)
