@@ -8,7 +8,6 @@ import (
 	"go.bug.st/serial"
 	"log"
 	"os"
-	"time"
 )
 
 // Data structure to parse sensor serial response
@@ -66,6 +65,7 @@ func main() {
 		}
 		var response Response
 		json.Unmarshal([]byte(line), &response)
+		log.Print("Data collected | ", response)
 		writeDb(response)
 	}
 }
@@ -81,6 +81,5 @@ func writeDb(data Response) {
 	writeAPI.WriteRecord(fmt.Sprintf("lab,unit=voltage inputVoltage=%f,sensor=%f,status=\"%s\"", data.VSensor.InputVoltage, data.VSensor.SensorOutput,
 		data.VSensor.PowerStatus))
 	writeAPI.Flush()
-	log.Print("Data pushed at: ", time.Now())
 	defer client.Close()
 }
