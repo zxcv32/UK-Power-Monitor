@@ -19,7 +19,7 @@ int vSensor = 0;
 
 void setup()
 {
-  Serial.begin(9600);  
+  Serial.begin(115200);  
   pinMode(LED_BUILTIN, OUTPUT);
   pinMode(voltageSensorOutput, OUTPUT);
   dht.begin();
@@ -60,5 +60,5 @@ void loop()
   serializeJson(output, Serial);
   Serial.println();
   digitalWrite(LED_BUILTIN, LOW); 
-  delay(50);
+  delay(1000);
 }
