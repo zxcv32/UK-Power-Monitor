@@ -22,5 +22,5 @@ else
    tag="$version-unknown"
 fi
 
-echo "$tag"
+echo "TAG=$tag"
 
