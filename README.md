@@ -20,3 +20,10 @@ Functions:
 6. External storage (optional)
 
 Checkout [Arm-Unit](https://github.com/zxcV32/Arm-Unit) for modular case for the this project.
+
+# Deployment
+> Deploy Grafana and InfluxDB using [ansible playbooks](https://github.com/zxcV32/ansible-playbooks) 
+
+1. Write `nano/sketch/sketch.ino` to Arduino nano.
+  > Install `DHT` and `ArduinoJson` library first
+2. Build and deploy docker container from `pi` directory
