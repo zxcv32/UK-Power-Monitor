@@ -1,4 +1,5 @@
-version=$(head -n 1 ../project.version)
+ref="$GITHUB_REF"
+version=$(head -n 1 project.version)
 source=$(echo $ref | cut -d / -f2-2)
 tagConversion=$(echo $ref | cut -d / -f3- | tr  '/' '-')
 

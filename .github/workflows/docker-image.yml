@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    - name: Retrieve tag
+      run: |
+        bash ./.github/tag.sh
+      id: tag
+    - name: Build the Docker image
+      run: docker build ./pi --file Dockerfile --tag uk-power-monitor:$(tag)
