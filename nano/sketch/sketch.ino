@@ -36,7 +36,7 @@ void loop()
   StaticJsonDocument<48> vSensor;
   vSensor["inputVoltage"] = vIn;
   vSensor["sensorOutput"] = vOut;
-  if (vIn >= 5){
+  if (vIn >= 4){
     digitalWrite(voltageSensorOutput, HIGH); 
     vSensor["powerStatus"] = "live";
   } else {
