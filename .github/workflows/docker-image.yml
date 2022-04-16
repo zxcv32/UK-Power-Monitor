@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v3
     - name: Retrieve tag
       run: |
-        echo $(bash ./.github/tag.sh) >> $GITHUB_ENV
+        bash ./.github/tag.sh >> $GITHUB_ENV
       id: tag
     - name: Build the Docker image
-      run: docker build ./pi --file Dockerfile --tag uk-power-monitor:$(TAG)
+      run: docker build ./pi --file ./pi/Dockerfile --tag uk-power-monitor:"${{ env.TAG }}"
