@@ -1,11 +1,11 @@
 # UK Power Monitor
 
-Monitors and tweets mains power status of the Uttarakhand state.
+This app monitors the mains power status of the Uttarakhand state.
 
 Functions: 
 1. Monitors mains power and other stats. 
-2. Stores metric in a Timeseries database.
-3. Tweet power status (TODO)
+2. Stores metric in a Timeseries database (InfluxDB).
+3. Display stats on a Grafana Dashboard.
 
 # Grafana
 ![img.png](img.png)
