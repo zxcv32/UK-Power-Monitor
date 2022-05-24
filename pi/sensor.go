@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/influxdata/influxdb-client-go/v2"
+	log "github.com/sirupsen/logrus"
 	"go.bug.st/serial"
-	"log"
 	"os"
 )
 
@@ -65,7 +65,7 @@ func main() {
 		}
 		var response Response
 		json.Unmarshal([]byte(line), &response)
-		log.Print("Data collected | ", response)
+		log.Debugln("Data collected | ", response)
 		writeDb(response)
 	}
 }

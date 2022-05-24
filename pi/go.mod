@@ -4,6 +4,7 @@ go 1.18
 
 require (
 	github.com/influxdata/influxdb-client-go/v2 v2.8.1
+	github.com/sirupsen/logrus v1.8.1
 	go.bug.st/serial v1.3.5
 )
 
