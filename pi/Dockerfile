@@ -1,4 +1,4 @@
-FROM golang:1.18 AS build
+FROM golang:1.20.10 AS build
 WORKDIR /sensors
 COPY go.mod ./
 COPY go.sum ./
@@ -7,7 +7,7 @@ RUN go mod verify
 COPY *.go ./
 RUN CGO_ENABLED=0 GOOS=linux go build -installsuffix cgo -tags=nomsgpack -a -o app .
 
-FROM golang:1.18
+FROM golang:1.20.10
 WORKDIR /app
 COPY --from=build /sensors/app ./app
 CMD ["./app"]
